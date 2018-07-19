@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, NavLink } from 'react-router-dom';
 import gamesPage from './GamesPage';
-import Home from './Home';
+import { GameForm } from './GameForm';
 
 
 
@@ -14,16 +13,16 @@ class App extends Component {
     return (
 			<BrowserRouter>
 
-					<div className="App">
-						<header className="App-header">
-							<img src={logo} className="App-logo" alt="logo" />
-							<h1 className="App-title">Welcome to React</h1>
-						</header>
-						<Link to="/">Home</Link>					
-						<Link to="/games">Games</Link>	
+					<div className="ui container">
+						<div className="ui three item menu">
+							<NavLink className="item" activeClassName="active" exact to="/">Home</NavLink>					
+							<NavLink className="item" activeClassName="active" exact to="/games">Games</NavLink>							
+							<NavLink className="item" activeClassName="active" to="/games/new">Add games</NavLink>							
+						</div>
+	
 
-						<Route exact path="/" component={Home} />
-						<Route path="/games" component={gamesPage} />
+						<Route exact path="/games" component={gamesPage} />
+						<Route path="/games/new" component={GameForm} />
 					</div>
 
 			</BrowserRouter>

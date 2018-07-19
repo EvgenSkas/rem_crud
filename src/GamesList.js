@@ -6,10 +6,11 @@ export default ({games}) => {
 	)
 	const gamesList = (
 		<p>games list</p>
-	)
+	)		
 	return (
 		<div>
-			{games.length === 0 ? emptyMessage : gamesList}
+			<h1>Games List</h1>
+			{(games.length === 0) ? emptyMessage : gamesList}
 		</div>
 	)
 }
