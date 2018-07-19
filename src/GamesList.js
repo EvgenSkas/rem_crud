@@ -11,6 +11,7 @@ export default ({games}) => {
 		<div>
 			<h1>Games List</h1>
 			{(games.length === 0) ? emptyMessage : gamesList}
+			<p>hi</p>
 		</div>
 	)
 }
